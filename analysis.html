@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+	  <script type="text/javascript">
+        function valid(form) {
+            var fail = false;
+            var prof = form.prof.value;
+            var city = form.city.value;
+            var salar = form.salar.value;
+            var state = form.state.value;
+            if(prof === '' || prof === ' ')
+                fail = 'Вы не ввели профессию';
+            else if(city === '')
+                fail = 'Вы не ввели город';
+            else if (salar === '')
+                fail = 'Вы не ввели уровень з/п';
+            else if(state === '')
+                fail = 'Вы не выбрали режим работы';
+            if(fail)
+                alert(fail);
+            else
+                window.location = 'processing.html'
+        }
+    </script>
+	<title>FindJobCoder</title>
+</head>
+<body>
+
+<header class="header">
+	<div class="container">
+		<div class="header__inner">
+			<div class="header__logo">FJC</div>
+			<nav class="nav">
+				<a class="nav__link" href="main.html">Главная</a>
+				<a class="nav__link" href="analysis.html">Анализ</a>
+				<a class="nav__link" href="contacts.html">Контакты</a>
+			</nav>
+		</div>
+	</div>
+</header>
+
+<div class="content">
+	<div class="container">
+		<h2 class="content__title">Чем мы занимаемся?</h2>
+		<p class ="description">Добро пожаловать на нашу разработку, призванную помочь подойти к поиску и анализу вакансий наиболее точно! Такие критерии, как язык программирования, направление деятельности, заработная плата, требуемые навыки, позволят найти идеальные условия работы. Вам лишь остается определить их для себя, а всю остальную работу выполнит сервис FindJobCoder.</p>
+
+		<form action="" method="post" name="param" id="form">
+	        <label for="prof" class="text__form">Профессия:</label>
+	        <input type="text" name="prof" id="prof" /> <br><br>
+	        <label for="city" class="text__form">Город:</label>
+	        <input type="text" name="city" id="city" /> <br><br>
+	        <label for="salar" class="text__form">З/п не ниже:</label>
+	        <input type="text" name="salar" id="salar" /> <br><br>
+	        <div class="radio">
+		        <span class="text__form">Удаленный режим работы:</span>
+		        <input class="input__radio" type="radio" name="state" id="yes" value="Да" /> <label class="label__radio" for="yes">Да</label>
+		        <input class="input__radio" type="radio" name="state" id="no" value="Нет" /> <label class="label__radio" for="no">Нет</label>
+		        <input class="input__radio" type="radio" name="state" id="withoutdif" value="Не имеет значения" /> <label class="label__radio" for="withoutdif">Не имеет значения</label> <br><br>
+	        </div>
+	        <button type="button" class="btn__success" onclick="valid(document.getElementById('form'))">Ищем</button> <br><br>
+    	</form>
+	</div>
+</div>
+
+
+</body>
+</html>
